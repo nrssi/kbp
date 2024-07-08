@@ -8,13 +8,13 @@ type StatusCode byte
 
 type ContentType byte
 
-type TaskStatus string
+type TaskStatus byte
 
 const (
-	Todo       TaskStatus = "TODO"
-	InProgress TaskStatus = "IN_PROGRESS"
-	Done       TaskStatus = "DONE"
-	Blocked    TaskStatus = "TASK_STATUS"
+	Todo       TaskStatus = 0x01
+	InProgress TaskStatus = 0x02
+	Done       TaskStatus = 0x03
+	Blocked    TaskStatus = 0x04
 )
 
 const (
@@ -49,8 +49,8 @@ const (
 )
 
 type KbpPayload interface {
-	Encode(v interface{}) ([]byte, error)
-	Decode(data []byte, t interface{}) error
+	Encode() ([]byte, error)
+	Decode(data []byte) error
 }
 
 type KbpRequestHeader struct {

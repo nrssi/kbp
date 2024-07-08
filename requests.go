@@ -1,21 +1,16 @@
 package kbp
 
 type KbpRequest[T KbpPayload] struct {
-	Header KbpRequestHeader
 	Body   T
+	Header KbpRequestHeader
 }
 
 type TaskCreateRequest struct {
-	taskNameLen    byte
-	TaskName       string
-	descriptionLen uint64
-	Description    string
-	projectNameLen byte
-	ProjectName    string
-	dueDateLen     byte
-	DueDate        string
-	taskStatusLen  byte
-	TaskStatus     TaskStatus
+	TaskName    string
+	Description string
+	ProjectName string
+	DueDate     string
+	Status      TaskStatus
 }
 
 type TaskGetRequest struct {
@@ -23,33 +18,29 @@ type TaskGetRequest struct {
 }
 
 type TaskListRequest struct {
-	taskNameLen    byte
-	TaskName       string
-	descriptionLen uint64
-	Description    string
-	projectNameLen byte
-	ProjectName    string
+	TaskName    string
+	Description string
+	ProjectName string
+	DueDate     string
+	Status      TaskStatus
 }
 
 type TaskUpdateRequest struct {
-	TaskId         uint64
-	taskNameLen    byte
-	TaskName       string
-	descriptionLen uint64
-	Description    string
-	projectNameLen byte
-	ProjectName    string
+	TaskName    string
+	Description string
+	ProjectName string
+	DueDate     string
+	TaskId      uint64
+	Status      TaskStatus
 }
 
 type TaskDeleteRequest struct {
 	TaskId uint64
 }
 
-type ProjectCreatRequest struct {
-	projectNameLen        byte
-	ProjectName           string
-	projectDescriptionLen uint64
-	Description           string
+type ProjectCreateRequest struct {
+	ProjectName string
+	Description string
 }
 
 type ProjectGetRequest struct {
@@ -57,20 +48,22 @@ type ProjectGetRequest struct {
 }
 
 type ProjectListRequest struct {
-	projectNameLen        byte
-	ProjectName           string
-	projectDescriptionLen uint64
-	Description           string
+	ProjectName string
+	Description string
 }
 
+type ProjectUpdateRequest struct {
+	ProjectName string
+	Description string
+	ProjectId   uint64
+}
 type ProjectDeleteRequest struct {
 	ProjectId uint64
 }
 
 type NoteCreateRequest struct {
-	TaskId        uint64
-	noteDetailLen uint64
-	NoteDetail    string
+	NoteDetail string
+	TaskId     uint64
 }
 
 type NoteListRequest struct {
@@ -78,27 +71,30 @@ type NoteListRequest struct {
 }
 
 type NoteUpdateRequest struct {
-	NoteId        uint64
-	noteDetailLen uint64
-	NoteDetail    string
+	NoteDetail string
+	NoteId     uint64
 }
 
 type NoteDeleteRequest struct {
 	NoteId uint64
 }
 
-type CreateReminderRequest struct {
-	time string
+type ReminderCreateRequest struct {
+	Time string
 }
 
-type GetReminderRequest struct {
+type ReminderGetRequest struct {
 	ReminderId uint64
 }
 
-type ListReminderRequest struct {
+type ReminderListRequest struct {
 	DueTime string
 }
 
-type DeleteReminderRequest struct {
+type ReminderUpdateRequest struct {
+	DueTime    string
+	ReminderId uint64
+}
+type ReminderDeleteRequest struct {
 	ReminderId uint64
 }
