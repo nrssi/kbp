@@ -54,6 +54,46 @@ func decodeAndComp(p1 KbpPayload) error {
 		decodedStruct = &ReminderUpdateRequest{}
 	case *ReminderDeleteRequest:
 		decodedStruct = &ReminderDeleteRequest{}
+	case *TaskCreateResponse:
+		decodedStruct = &TaskCreateResponse{}
+	case *TaskGetResponse:
+		decodedStruct = &TaskGetResponse{}
+	case *TaskListResponse:
+		decodedStruct = &TaskListResponse{}
+	case *TaskUpdateResponse:
+		decodedStruct = &TaskUpdateResponse{}
+	case *TaskDeleteResponse:
+		decodedStruct = &TaskDeleteResponse{}
+	case *ProjectCreateResponse:
+		decodedStruct = &ProjectCreateResponse{}
+	case *ProjectGetResponse:
+		decodedStruct = &ProjectGetResponse{}
+	case *ProjectListResponse:
+		decodedStruct = &ProjectListResponse{}
+	case *ProjectUpdateResponse:
+		decodedStruct = &ProjectUpdateResponse{}
+	case *ProjectDeleteResponse:
+		decodedStruct = &ProjectDeleteResponse{}
+	case *NoteCreateResponse:
+		decodedStruct = &NoteCreateResponse{}
+	case *NoteGetResponse:
+		decodedStruct = &NoteGetResponse{}
+	case *NoteListResponse:
+		decodedStruct = &NoteListResponse{}
+	case *NoteUpdateResponse:
+		decodedStruct = &NoteUpdateResponse{}
+	case *NoteDeleteResponse:
+		decodedStruct = &NoteDeleteResponse{}
+	case *ReminderCreateResponse:
+		decodedStruct = &ReminderCreateResponse{}
+	case *ReminderGetResponse:
+		decodedStruct = &ReminderGetResponse{}
+	case *ReminderListResponse:
+		decodedStruct = &ReminderListResponse{}
+	case *ReminderUpdateResponse:
+		decodedStruct = &ReminderUpdateResponse{}
+	case *ReminderDeleteResponse:
+		decodedStruct = &ReminderDeleteResponse{}
 	default:
 		panic("Unknow type, check the implementation")
 	}

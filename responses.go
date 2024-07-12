@@ -1,8 +1,8 @@
 package kbp
 
 type KbpResponse struct {
-	Header KbpResponseHeader
 	Body   *KbpPayload
+	Header KbpResponseHeader
 }
 
 type TaskCreateResponse struct {
@@ -10,50 +10,35 @@ type TaskCreateResponse struct {
 }
 
 type TaskGetResponse struct {
-	TaskId         uint64
-	taskNameLen    byte
-	TaskName       string
-	descriptionLen uint64
-	Description    string
-	projectNameLen byte
-	ProjectName    string
-	dueDateLen     byte
-	DueDate        string
-	taskStatusLen  byte
-	TaskStatus     TaskStatus
+	TaskName    string
+	Description string
+	ProjectName string
+	DueDate     string
+	TaskId      uint64
+	TaskStatus  TaskStatus
 }
 
 type TaskListResponse struct {
-	Length uint64
 	Tasks  []TaskGetResponse
+	length uint64
 }
 
 type TaskUpdateResponse struct {
-	TaskId         uint64
-	taskNameLen    byte
-	TaskName       string
-	descriptionLen uint64
-	Description    string
-	projectNameLen byte
-	ProjectName    string
-	dueDateLen     byte
-	DueDate        string
-	taskStatusLen  byte
-	TaskStatus     TaskStatus
+	TaskName    string
+	Description string
+	ProjectName string
+	DueDate     string
+	TaskId      uint64
+	TaskStatus  TaskStatus
 }
 
 type TaskDeleteResponse struct {
-	TaskId         uint64
-	taskNameLen    byte
-	TaskName       string
-	descriptionLen uint64
-	Description    string
-	projectNameLen byte
-	ProjectName    string
-	dueDateLen     byte
-	DueDate        string
-	taskStatusLen  byte
-	TaskStatus     TaskStatus
+	TaskName    string
+	Description string
+	ProjectName string
+	DueDate     string
+	TaskId      uint64
+	TaskStatus  TaskStatus
 }
 
 type ProjectCreateResponse struct {
@@ -61,32 +46,26 @@ type ProjectCreateResponse struct {
 }
 
 type ProjectGetResponse struct {
-	ProjectId      uint64
-	projectNameLen byte
-	ProjectName    string
-	descriptionLen uint64
-	Description    string
+	ProjectName string
+	Description string
+	ProjectId   uint64
 }
 
 type ProjectListResponse struct {
-	Length   uint64
 	Projects []ProjectGetResponse
+	length   uint64
 }
 
 type ProjectUpdateResponse struct {
-	ProjectId      uint64
-	projectNameLen byte
-	ProjectName    string
-	descriptionLen uint64
-	Description    string
+	ProjectName string
+	Description string
+	ProjectId   uint64
 }
 
 type ProjectDeleteResponse struct {
-	ProjectId      uint64
-	projectNameLen byte
-	ProjectName    string
-	descriptionLen uint64
-	Description    string
+	ProjectName string
+	Description string
+	ProjectId   uint64
 }
 
 type NoteCreateResponse struct {
@@ -94,48 +73,45 @@ type NoteCreateResponse struct {
 }
 
 type NoteGetResponse struct {
-	NoteId        uint64
-	noteDetailLen uint64
-	NoteDetail    string
+	NoteDetail string
+	NoteId     uint64
 }
 
 type NoteListResponse struct {
-	Length uint64
 	Notes  []NoteGetResponse
+	length uint64
 }
 
 type NoteUpdateResponse struct {
-	NoteId        uint64
-	noteDetailLen uint64
-	NoteDetail    string
+	NoteDetail string
+	NoteId     uint64
 }
 
 type NoteDeleteResponse struct {
-	NoteId        uint64
-	noteDetailLen uint64
-	NoteDetail    string
+	NoteDetail string
+	NoteId     uint64
 }
 
-type ReminderCreatResponse struct {
+type ReminderCreateResponse struct {
 	ReminderId uint64
 }
 
 type ReminderGetResponse struct {
-	ReminderId uint64
 	DueTime    string
+	ReminderId uint64
 }
 
 type ReminderListResponse struct {
-	Length    uint64
-	Reminders []ReminderListResponse
+	Reminders []ReminderGetResponse
+	length    uint64
 }
 
 type ReminderUpdateResponse struct {
-	ReminderId uint64
 	DueTime    string
+	ReminderId uint64
 }
 
 type ReminderDeleteResponse struct {
-	ReminderId uint64
 	DueTime    string
+	ReminderId uint64
 }
